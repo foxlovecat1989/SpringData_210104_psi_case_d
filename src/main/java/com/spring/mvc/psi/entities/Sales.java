@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "SALES")
+@Table(name = "PURCHASE")
 public class Sales {
     
     @Id
@@ -40,7 +40,8 @@ public class Sales {
     public void setProduct(Product product) {
         this.product = product;
     }
-
+    
+    
     public Integer getId() {
         return id;
     }
@@ -72,5 +73,4 @@ public class Sales {
     public void setDate(Date date) {
         this.date = date;
     }
-
 }

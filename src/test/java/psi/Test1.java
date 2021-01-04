@@ -9,7 +9,8 @@ public class Test1 {
     @Test
     public void t1(){
         ClassPathXmlApplicationContext ctx = 
-                new ClassPathXmlApplicationContext("springMVC-servlet.xml");
-        
+            new ClassPathXmlApplicationContext("springdata-jpa-config.xml");
+
+        System.out.println(ctx);
     }
 }
