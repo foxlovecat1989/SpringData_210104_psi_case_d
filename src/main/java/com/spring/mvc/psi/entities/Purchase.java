@@ -5,6 +5,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +28,20 @@ public class Purchase {
     @Temporal(TemporalType.TIMESTAMP)
     // @Column
     private Date date = new Date();
+    
+    @ManyToOne
+    @JoinColumn(name = "pid", referencedColumnName = "id")
+    private Product product;
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    
+    
     public Integer getId() {
         return id;
     }
@@ -58,10 +73,4 @@ public class Purchase {
     public void setDate(Date date) {
         this.date = date;
     }
-
-    @Override
-    public String toString() {
-        return "Purchase{" + "id=" + id + ", price=" + price + ", quantity=" + quantity + ", date=" + date + '}';
-    }
-
 }
