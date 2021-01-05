@@ -16,7 +16,7 @@ public class Product {
     
    @Id    
    @GeneratedValue
-   private Integer id;
+   private Integer pid;
     
    @Column(name = "name", nullable = false, length = 50)
    private String name;
@@ -38,14 +38,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name) {
-        this.name = name;
-    }
-    
     public Product(String name, String image) {
         
         this.name = name;
-        this.image = image;
+        this.image = null;
     }
     
     public void setPurchases(List<Purchase> purchases) {
@@ -61,11 +57,11 @@ public class Product {
     }
     
     public Integer getId() {
-        return id;
+        return pid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer pid) {
+        this.pid = pid;
     }
 
     public String getName() {

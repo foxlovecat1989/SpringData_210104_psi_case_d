@@ -38,6 +38,7 @@
                 <value>com.spring.mvc.single_user.entities</value>
                 <value>com.spring.mvc.groupby.entities</value>
                 <value>com.spring.mvc.psi.entities</value>
+                <value>repositories</value>
             </list>
         </property>
         <property name="jpaProperties">
