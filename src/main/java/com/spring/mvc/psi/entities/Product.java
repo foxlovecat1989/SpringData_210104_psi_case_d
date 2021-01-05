@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PRODUCT")
+@Table(name = "T_PRODUCT")
 public class Product {
     
    @Id    
@@ -35,6 +35,19 @@ public class Product {
         return purchases;
     }
 
+    public Product() {
+    }
+
+    public Product(String name) {
+        this.name = name;
+    }
+    
+    public Product(String name, String image) {
+        
+        this.name = name;
+        this.image = image;
+    }
+    
     public void setPurchases(List<Purchase> purchases) {
         this.purchases = purchases;
     }

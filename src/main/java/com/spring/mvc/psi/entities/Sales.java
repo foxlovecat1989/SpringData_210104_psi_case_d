@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "PURCHASE")
+@Table(name = "T_PURCHASE")
 public class Sales {
     
     @Id
@@ -33,6 +33,16 @@ public class Sales {
     @JoinColumn(name = "pid", referencedColumnName = "id")
     private Product product;
 
+    public Sales() {
+    }
+
+    public Sales(Integer price, Integer quantity, Product product) {
+        
+        this.price = price;
+        this.quantity = quantity;
+        this.product = product;
+    }
+    
     public Product getProduct() {
         return product;
     }
