@@ -25,3 +25,13 @@ LEFT JOIN (
     WHERE p.ID = sa.PID 
     GROUP BY p.ID) as sa
 ON p.id = sa.pid;
+
+-- 庫存 2
+-- 建立一個View, 名稱 : Inventory2
+SELECT i.ID, 
+       i."NAME", 
+       i.PU_QUANTITY-i.SA_QUANTITY as REMAIN_QUANTITY, 
+       i.PU_AMOUNT/i.PU_QUANTITY as COST ,
+       CAST(i.PU_AMOUNT/i.PU_QUANTITY/0.3 AS INTEGER) as price1 ,
+       CAST(i.PU_AMOUNT/i.PU_QUANTITY/0.2 AS INTEGER) as price2 
+FROM INVENTORY i;
